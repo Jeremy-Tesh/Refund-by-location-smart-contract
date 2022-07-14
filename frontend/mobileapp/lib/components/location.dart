@@ -1,14 +1,16 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class MyLocation extends StatefulWidget {
+  const MyLocation({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _MyLocationState createState() => _MyLocationState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MyLocationState extends State<MyLocation> {
   late bool _serviceEnabled;
   late PermissionStatus _permissionGranted;
   LocationData? _userLocation;
@@ -59,7 +61,8 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Text('Your latitude: ${_userLocation?.latitude}'),
                         const SizedBox(width: 10),
-                        Text('Your longtitude: ${_userLocation?.longitude}')
+                        Text('Your longtitude: ${_userLocation?.longitude}'),
+                        // writeLocation()
                       ],
                     ),
                   )
@@ -69,4 +72,14 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  // Text writeLocation() {
+  //   Timer.periodic(
+  //     const Duration(
+  //       seconds: 6, //You can change second to milisecond etc
+  //     ),
+  //     (t) => _getUserLocation(),
+  //   );
+  //   return Text(``);
+  // }
 }

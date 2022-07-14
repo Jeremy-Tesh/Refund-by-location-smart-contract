@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/components/location.dart';
+import 'package:frontend/contract_link.dart';
 // import 'package:frontend/screens/metamask.dart';
 import 'package:provider/provider.dart';
 
@@ -13,12 +16,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData.dark(),
-      home: const HomePage(),
+    return ChangeNotifierProvider(
+      create: (context) => ContractLink(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData.dark(),
+        home: MyLocation(),
+      ),
     );
   }
+
+  // Widget writeLocation() {
+  //   var timer = Timer.periodic(
+  //     const Duration(
+  //       seconds: 60, //You can change second to milisecond etc
+  //     ),
+  //     (t) => HomePage(),
+  //   );
+  // }
 }
 
 // class MyHomePage extends StatefulWidget {
