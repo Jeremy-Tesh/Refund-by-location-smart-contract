@@ -12,8 +12,8 @@ require("hardhat-gas-reporter")
  */
 
 
-const RINKEBY_RPC_URL =  process.env.RINKEBY_RPC_URL
-const PRIVATE_KEY =  process.env.PRIVATE_KEY
+const RINKEBY_RPC_URL =  process.env.RINKEBY_RPC_URL || ""
+const PRIVATE_KEY =  process.env.PRIVATE_KEY || ""
 module.exports = {
     defaultNetwork: "hardhat",
     networks: {
@@ -32,6 +32,15 @@ module.exports = {
     etherscan: {
       gasReporter:{
         enabled:true
+      }
+    },
+
+    namedAccounts: {
+      deployer:{
+        default:0,
+      },
+      user:{
+        default:1,
       }
     }
 
