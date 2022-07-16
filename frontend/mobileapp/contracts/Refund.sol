@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.5.0;
+pragma solidity >=0.4.22 <0.9.0;
 
 contract Refund {
     uint256 public userCount;
@@ -16,7 +16,7 @@ contract Refund {
     event UserCreated(string user, uint256 id);
 
     constructor() public {
-        userCount = 0;
+        userCount = 1;
     }
 
     function addUser(

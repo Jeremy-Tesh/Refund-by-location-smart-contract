@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:frontend/contract_link.dart';
 import 'package:location/location.dart';
+import 'package:provider/provider.dart';
 
 class MyLocation extends StatefulWidget {
   const MyLocation({Key? key}) : super(key: key);
@@ -44,6 +46,7 @@ class _MyLocationState extends State<MyLocation> {
 
   @override
   Widget build(BuildContext context) {
+    var location = Provider.of<ContractLink>(context);
     return Scaffold(
       body: Center(
         child: Column(
