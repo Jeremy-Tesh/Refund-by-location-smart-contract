@@ -55,9 +55,9 @@ class ContractLink extends ChangeNotifier {
     _contract = DeployedContract(_abiCode, _contractAddress);
 
     _userCount = _contract.function("userCount");
-    // _user = _contract.function("user");
-    // _createUser = _contract.function('addUser');
-    // _userCreated = _contract.event("UserCreated");
+    _user = _contract.function("user");
+    _createUser = _contract.function('addUser');
+    _userCreated = _contract.event("UserCreated");
 
     getUsers();
   }
