@@ -6,6 +6,7 @@ import { init } from './Web3Client';
 import Header from './components/Header';
 import {MoralisProvider } from "react-moralis"
 import RegisterEmployee from './components/RegisterEmployee';
+import {NotificationProvider} from "web3uikit"
 
 
 
@@ -29,10 +30,12 @@ function App() {
 
   return (
     <MoralisProvider initializeOnMount={false}>
+      <NotificationProvider>
       <div className="App">
       <Header/>
       <RegisterEmployee/>
-    </div>
+    </div>s
+      </NotificationProvider>
 
     </MoralisProvider>
     
