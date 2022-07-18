@@ -1,7 +1,11 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { useEffect } from 'react';
-import Web3 from 'web3';
+
+import { init } from './Web3Client';
+import Header from './components/Header';
+import {MoralisProvider } from "react-moralis"
+import RegisterEmployee from './components/RegisterEmployee';
 
 
 
@@ -13,7 +17,7 @@ function App() {
 
   useEffect(()=>{
 
-   
+   init();
     
 
   },[])
@@ -24,9 +28,14 @@ function App() {
 
 
   return (
-    <div className="App">
-      
+    <MoralisProvider initializeOnMount={false}>
+      <div className="App">
+      <Header/>
+      <RegisterEmployee/>
     </div>
+
+    </MoralisProvider>
+    
   );
 }
 
