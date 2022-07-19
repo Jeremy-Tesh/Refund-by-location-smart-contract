@@ -1,7 +1,12 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { useEffect } from 'react';
-import Web3 from 'web3';
+
+import { init } from './Web3Client';
+import Header from './components/Header';
+import {MoralisProvider } from "react-moralis"
+import RegisterEmployee from './components/RegisterEmployee';
+import {NotificationProvider} from "web3uikit"
 
 
 
@@ -13,7 +18,7 @@ function App() {
 
   useEffect(()=>{
 
-   
+   init();
     
 
   },[])
@@ -24,9 +29,16 @@ function App() {
 
 
   return (
-    <div className="App">
-      
-    </div>
+    <MoralisProvider initializeOnMount={false}>
+      <NotificationProvider>
+      <div className="App">
+      <Header/>
+      <RegisterEmployee/>
+    </div>s
+      </NotificationProvider>
+
+    </MoralisProvider>
+    
   );
 }
 
