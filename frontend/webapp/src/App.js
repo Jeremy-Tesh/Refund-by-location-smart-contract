@@ -31,7 +31,8 @@ function App() {
   return (
     <MoralisProvider initializeOnMount={false}>
       <NotificationProvider>
-      <div className="App">
+      <div className="App border-2 border-red-500 border-solid">
+        <p className='text-red-500'>hhh</p>
       <Header/>
       <RegisterEmployee/>
     </div>s
