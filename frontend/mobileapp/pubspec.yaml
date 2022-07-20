@@ -40,6 +40,7 @@ dependencies:
   web_socket_channel: ^2.2.0
   http: ^0.13.4
   web3dart: ^2.3.5
+  flutter_dotenv: ^5.0.2
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +66,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - src/abis/Refund.json
+    - src/constants/abi.json
+    - src/constants/contractAddresses.json
+    - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
