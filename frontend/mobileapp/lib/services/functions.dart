@@ -1,9 +1,9 @@
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:frontend/utils/constants.dart';
 import 'package:web3dart/web3dart.dart';
 
-// const owner_private_key =
-//     "d1526ab72e3327a22e4371ab86f44ab94d6542c0c6215e0df9bd246817b41231";
+String owner_private_key = dotenv.env['PRIVATE_KEY']!;
 
 Future<DeployedContract> loadContract() async {
   String abi = await rootBundle.loadString('src/constants/abi.json');
