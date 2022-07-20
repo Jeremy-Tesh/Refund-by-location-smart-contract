@@ -44,7 +44,13 @@ class ContractLink extends ChangeNotifier {
     print(_privateKey);
     print("provider started");
     await say(ethClient!);
-    print("passed");
+    await createEmployee("0x2e66bdba0b02f23F6faf8f85602c4a3b8870C829", "ermi",
+        10, 12, 8, ethClient!);
+    List<dynamic> x = await calculateDistance(34, 67, ethClient!);
+    print(x);
+    List<dynamic> rs = await getEmployeeDetail(
+        "0x2e66bdba0b02f23F6faf8f85602c4a3b8870C829", ethClient!);
+    print(rs);
   }
 
   // Future<void> getAbi() async {
