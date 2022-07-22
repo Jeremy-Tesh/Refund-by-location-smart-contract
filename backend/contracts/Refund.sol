@@ -29,7 +29,7 @@ function getOwner() public view returns (address) {
 
 function createEmployee(address empAddress, string memory name, uint256 lat, uint256 lon, uint256 range) public {
         
-    require(msg.sender == owner);
+    // require(msg.sender == owner);
         user[empAddress].fullName = name;
         user[empAddress].latitude = lat;
         user[empAddress].longtuide = lon;
@@ -76,7 +76,10 @@ function calculateDistance(uint256 lat2, uint256 lon2) public view returns (uint
         }
         return y;
     }
-
+function say() public pure returns(string memory result) {
+        result = "Hello world";
+        return result;
+    }
    
    
 }
